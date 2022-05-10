@@ -15,7 +15,7 @@ spec:
     spec:
       containers: 
         - name: hello-world-nginx
-          image: acr5341aksbluegreen.azurecr.io/hello-world-nginx:v1
+          image: acr5341aksbluegreen.azurecr.io/hello-world-nginx:blue
           ports:
             - name: http
               containerPort: 80

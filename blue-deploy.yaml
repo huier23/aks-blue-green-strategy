@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-deployment
+spec:
+  replicas: 2
+  selector:
+      matchLabels:
+        app: hello-world-nginx
+  template:
+    metadata:
+      labels:
+        app: hello-world-nginx
+        version: "v1"
+    spec:
+      containers: 
+        - name: hello-world-nginx
+          image: acr5341aksbluegreen.azurecr.io/hello-world-nginx:v1
+          ports:
+            - name: http
+              containerPort: 80
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 500m
+              memory: 500Mi

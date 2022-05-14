@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: green-deployment
+  name: deployment-hello-world-nginx
 spec:
   replicas: 2
   selector:
@@ -11,11 +11,12 @@ spec:
     metadata:
       labels:
         app: hello-world-nginx
-        version: "v2"
+        # version: "v1"
     spec:
       containers: 
         - name: hello-world-nginx
-          image: acr5341aksbluegreen.azurecr.io/hello-world-nginx:green
+          # image: acrgreenbluedeployment.azurecr.io/hello-world-nginx:$(version)
+          image: acrgreenbluedeployment.azurecr.io/hello-world-nginx:v1
           ports:
             - name: http
               containerPort: 80

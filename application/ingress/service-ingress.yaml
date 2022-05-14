@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: prod-svc-hello-world-nginx
+  namespace: rule-ingress
+  labels: 
+    app: hello-world-nginx
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+  type:  ExternalName
+  externalName: svc-hello-world-nginx.prod-hello-world.svc.cluster.local
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: dev-svc-hello-world-nginx
+  namespace: rule-ingress
+  labels: 
+    app: hello-world-nginx
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+  type:  ExternalName
+  externalName: svc-hello-world-nginx.dev-hello-world.svc.cluster.local

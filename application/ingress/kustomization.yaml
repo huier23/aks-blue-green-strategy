@@ -1,0 +1,4 @@
+resources:
+  - ns-ingress.yaml
+  - service-ingress.yaml
+  - rule-ingress.yaml

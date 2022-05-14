@@ -1,0 +1,4 @@
+bases:
+  - ../ingress
+patches:
+  - swap.yaml

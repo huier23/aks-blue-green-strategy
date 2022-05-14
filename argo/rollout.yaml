@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: rollout-hello-world-nginx
+spec:
+  # replicas: 2
+  revisionHistoryLimit: 5
+  workloadRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: hello-world
+  # selector:
+  #   matchLabels:
+  #     app: hello-world
+  # template:
+  #   metadata:
+  #     labels:
+  #       app: hello-world
+  #   spec:
+  #     containers:
+  #     - name: hello-world
+  #       image: acrgreenbluedeployment.azurecr.io/hello-world-nginx:v1
+  #       ports:
+  #       - containerPort: 8080
+  strategy:
+    blueGreen:
+      activeService: hello-world-svc-active
+      previewService: hello-world-svc-preview
+      autoPromotionEnabled: false

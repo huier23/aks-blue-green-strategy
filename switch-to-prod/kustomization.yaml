@@ -1,4 +1,0 @@
-bases:
-  - ../ingress
-patches:
-  - switch-to-prod.yaml

@@ -16,7 +16,7 @@ spec:
       containers: 
         - name: hello-world-nginx
           # image: acrgreenbluedeployment.azurecr.io/hello-world-nginx:$(version)
-          image: acrgreenbluedeployment.azurecr.io/hello-world-nginx:latest
+          image: acrgreenbluedeployment.azurecr.io/hello-world-nginx:v1
           ports:
             - name: http
               containerPort: 80

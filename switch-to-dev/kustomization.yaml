@@ -1,0 +1,4 @@
+bases:
+  - ../ingress
+patches:
+  - switch-to-dev.yaml

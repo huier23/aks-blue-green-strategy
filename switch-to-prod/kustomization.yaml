@@ -1,4 +1,4 @@
 bases:
   - ../ingress
 patches:
-  - swap.yaml
+  - switch-to-prod.yaml
